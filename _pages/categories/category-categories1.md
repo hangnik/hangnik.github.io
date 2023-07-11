@@ -1,9 +1,9 @@
 ---
-title: "Categories1"
+title: "JavaScript"
 layout: category
-permalink: /categories/categories1/
+permalink: /categories/JavaScript/
 author_profile: true
-taxonomy: Categories1
+taxonomy: JavaScript
 sidebar:
   nav: "categories"
 ---

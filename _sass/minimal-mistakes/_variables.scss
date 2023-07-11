@@ -15,15 +15,16 @@ $indent-var: 0.7lem !default;
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
 /* 2022.01.19 font change */
-$sans-serif: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', "Montserrat", "Pretendard", "Merriweather", sans-serif !default;
-$monospace: "Fira Mono", "Pretendard", Monaco, Consolas, "Lucida Console", monospace !default;
-
+$sans-serif: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+  "Montserrat", "Pretendard", "Merriweather", sans-serif !default;
+$monospace: "Fira Mono", "Pretendard", Monaco, Consolas, "Lucida Console",
+  monospace !default;
 
 /* sans serif typefaces */
 $sans-serif-narrow: $sans-serif !default;
 $helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
-$menufont: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', "Montserrat", "BioRhyme", "Pretendard", sans-serif !default;
-
+$menufont: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+  "Montserrat", "BioRhyme", "Pretendard", sans-serif !default;
 
 /* serif typefaces */
 $georgia: Georgia, serif !default;
@@ -31,9 +32,9 @@ $times: Times, serif !default;
 $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
-$lobster: 'Lobster', cursive !default;
-$biorhyme: 'BioRhyme', serif !default;
-$creteround: 'Crete Round', serif !default;
+$lobster: "Lobster", cursive !default;
+$biorhyme: "BioRhyme", serif !default;
+$creteround: "Crete Round", serif !default;
 
 $global-font-family: $sans-serif !default;
 $header-font-family: $sans-serif !default;
@@ -82,6 +83,8 @@ $warning-color: #d67f05 !default;
 $danger-color: #ee5f5b !default;
 $info-color: #3b9cba !default;
 $focus-color: $primary-color !default;
+$yellow-color: #f8b407 !default;
+$indigo-color: #003049 !default;
 // navigation background color
 $active-color: mix($primary-color, $background-color, 5%) !default;
 

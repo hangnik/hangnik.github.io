@@ -38,7 +38,7 @@
   padding-bottom: 0.5em;
   font-family: $menufont;
   font-size: $type-size-4;
-  color: $muted-text-color;
+  color: $indigo-color;
   border-bottom: 1px solid $border-color;
 
   + .list__item .archive__item-title {
@@ -57,12 +57,13 @@
   text-overflow: ellipsis;
 
   a[rel="permalink"]::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
+    color: $yellow-color;
   }
 
   a + a {
@@ -298,7 +299,7 @@
   }
 
   a.btn::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -324,7 +325,7 @@
     }
 
     a.btn::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -365,7 +366,7 @@
     }
 
     a.btn::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -409,7 +410,7 @@
     }
 
     a.btn::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -455,7 +456,7 @@
    Wide Pages
    ========================================================================== */
 
-  .wide {
+.wide {
   .archive {
     @include breakpoint($large) {
       padding-right: 0;
@@ -478,7 +479,7 @@
 /* Place inside a single layout */
 
 .layout--single {
-	.feature__wrapper {
-		display: inline-block;
-	}
+  .feature__wrapper {
+    display: inline-block;
+  }
 }
