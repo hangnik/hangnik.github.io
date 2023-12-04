@@ -7,7 +7,7 @@ categories:
 tags:
   - [html]
 
-permalink: /Etc/semantic-markup/
+permalink: /etc/semantic-markup/
 
 toc: true
 toc_sticky: true
