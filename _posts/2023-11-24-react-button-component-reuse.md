@@ -20,7 +20,7 @@ last_modified_at: 2023-11-24
 
 기존에 프로젝트에서 버튼 컴포넌트를 구성할 때는 props를 사용하여 컴포넌트를 생성했습니다.
 
-```js
+```jsx
 // ButtonContainer.jsx
 
 export default function ButtonContainer({
@@ -57,7 +57,7 @@ export default function ButtonContainer({
 }
 ```
 
-```js
+```jsx
 // ButtonContainerStyle.jsx
 
 export const Button = styled.button`
@@ -91,7 +91,7 @@ export const Button = styled.button`
 
 버튼 컴포넌트에 공통적으로 필요한 스타일을 적용시켜줍니다. 이때 버튼 종류에 따라 바뀔 수 있는 속성값은 CSS 변수를 사용해줍니다.
 
-```js
+```jsx
 function Button({ disabled, children, ...props }) {
   return (
     <StyledButton disabled={disabled} {...props}>
@@ -133,7 +133,7 @@ const StyledButton = styled.button`
 
 크기에 따른 버튼 컴포넌트를 생성하기 위해 `size` 라는 prop을 추가해줍니다. 이때 styled-components의 css 함수를 사용하여 `SIZES`라는 자바스크립트 객체에 저장해주었습니다.
 
-```js
+```jsx
 import styled, { css } from "styled-components";
 
 const SIZES = {
@@ -159,7 +159,7 @@ const SIZES = {
 
 성공, 오류, 경고 등 여러 상황에 따라 활용하거나 버튼 UI가 여러 타입일 때 사용할 수 있는 버튼 컴포넌트입니다. `variant`라는 prop을 추가해준 뒤 css 함수를 사용하여 `VARIANTS`라는 자바스크립트 객체에 저장해줍니다.
 
-```js
+```jsx
 const VARIANTS = {
   primary: css`
     --button-color: ${(props) => props.theme.colors.whiteColor};
@@ -176,7 +176,7 @@ const VARIANTS = {
 
 size, variant prop을 받아서 저장해둔 객체에 따라 해당하는 스타일을 적용하기 위해 기본 `StyledButton` 컴포넌트에 아래처럼 추가해줍니다.
 
-```js
+```jsx
 function Button({ disabled, size, variant, children, ...props }) {
   return (
     <StyledButton disabled={disabled} size={size} variant={variant} {...props}>
@@ -193,13 +193,14 @@ const StyledButton = styled.button`
 
 ### ✔️ 사용하기
 
-```js
+```jsx
 <Button type="button" size="lg" variant="white">
   회원가입
 </Button>
 ```
 
 이렇게 사이즈, 상황 별로 변수를 지정해주니 props만 보고 어떤 버튼인지 한눈에 파악할 수 있고, 중복되는 코드 또한 줄일 수 있었습니다. 👍
+
 위의 분류 말고도 필요한 상황에 따라 변수를 추가하여 버튼 컴포넌트를 분류해주면 좋을 것 같습니다.
 
 ## 🔗 참고
