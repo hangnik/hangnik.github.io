@@ -1,6 +1,6 @@
 ---
 title: "[Algorithm] 프로그래머스 크레인 인형뽑기 게임 - JS"
-excerpt: "프로그래머스 Level2. 크레인 인형뽑기 게임 풀이"
+excerpt: "프로그래머스 Level1. 크레인 인형뽑기 게임 풀이"
 
 categories:
   - Algorithm
