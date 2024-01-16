@@ -12,8 +12,8 @@ permalink: /etc/image-rendering-refectoring/
 toc: true
 toc_sticky: true
 
-date: 2023-01-09
-last_modified_at: 2023-01-09
+date: 2024-01-09
+last_modified_at: 2024-01-09
 ---
 
 ## 1️⃣ 렌더링 속도 체크 ✔️
