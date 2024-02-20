@@ -1,9 +1,9 @@
 ---
-title: "[etc] 이미지 렌더링 최적화하기"
+title: "[Refectoring] 이미지 렌더링 최적화하기"
 excerpt: "이미지 렌더링 속도를 줄여보자"
 
 categories:
-  - etc
+  - Etc
 tags:
   - [react, refectoring]
 
@@ -21,7 +21,7 @@ last_modified_at: 2024-01-09
 '줍깅' 프로젝트를 마친 후 가장 리팩토링 하고싶었던 부분이 이미지 최적화였다. 체감 상으로도 너무 늦게 렌더링되어 불편함을 느꼈고 실제로도 측정 결과 LCP에서 낮은 점수가 나왔기 때문에 가장 먼저 최적화를 진행해야겠다고 마음 먹었다. (무엇보다 성질 급한 한국인으로서 이미지가 느리게 뜨는건 참을 수 없었기에..😇)
 
 최적화 전 정확한 수치를 확인하기 위해 크롬 개발자도구를 통해 속도 검사를 했다.
-(모든 검사는 플로깅 기록 페이지를 중점으로 했습니다.)
+(모든 검사는 피드 페이지를 중점으로 했다)
 
 <img src="https://github.com/FRONTENDSCHOOL7/jubging/assets/97607752/0a8b7fbe-175a-49d6-9500-6180bcad501a" width="500" />
 
@@ -62,7 +62,7 @@ last_modified_at: 2024-01-09
 
 ### 🔸업로드 시 이미지 압축하기
 
-로컬에 저장한 이미지들은 위와 같이 이미지 포맷 변경와 압축을 통해 용량을 줄일 수 있었다. 하지만 사용자가 직접 사진을 업로드 할 때는 어떻게 최적화를 할 수 있을지 고민하던 중 `browser-image-compression `라는 라이브러리를 알게 되었다.
+로컬에 저장한 이미지들은 위와 같이 이미지 포맷 변경와 압축을 통해 용량을 줄일 수 있었다. 하지만 사용자가 직접 사진을 업로드 할 때는 어떻게 최적화를 할 수 있을지 고민하던 중 `browser-image-compression`라는 라이브러리를 알게 되었다.
 
 먼저 라이브러리를 설치해준다.
 
@@ -118,7 +118,7 @@ function useImageUploader() {
 export default useImageUploader;
 ```
 
-> imageCompression 모듈은 압축 파일을 `Blob` 객체로 반환해준다. 내가 진행하는 프로젝트에서는 `File` 타입을 사용해야 하므로 File 생성자를 통해 변환해주었다.
+imageCompression 모듈은 압축 파일을 `Blob` 객체로 반환해준다. 내가 진행하는 프로젝트에서는 `File` 타입을 사용해야 하므로 File 생성자를 통해 변환해주었다.
 
 <img src="https://github.com/hangnik/hangnik.github.io/assets/97607752/684f4ba3-6b3f-4bc5-899e-1d67d7dae53b" width="300" />
 <img src="https://github.com/hangnik/hangnik.github.io/assets/97607752/0a2cb1cf-72d1-42e6-a744-f2a54bb8ffdf" width="300" />
@@ -135,10 +135,10 @@ LCP는 `6.6s -> 5.3s`로, TBT는 `480ms -> 340ms`로 단축!
 
 네트워크탭에서의 측정 결과 역시 총 29개의 이미지 용량이 `9.5MB -> 5.9MB`로, 시간은 `1.81s -> 1.40s`로 단축되었다. 👏
 
-이렇게 정량적인 지표 뿐만 아니라 눈으로 봤을 때도 확연한 차이를 느낄 수 있었다. 앞으로도 꾸준히 코드 개선을 통해 사용자 경험이 높아질 수 있도록 페이시 성능을 개선해야겠다!
+이렇게 정량적인 지표 뿐만 아니라 눈으로 봤을 때도 확연한 차이를 느낄 수 있었다. 앞으로도 꾸준히 코드 개선을 통해 사용자 경험이 높아질 수 있도록 페이지 성능을 개선해야겠다!
 
 ## 🔗 참고
 
-- https://oliveyoung.tech/blog/2021-11-22/how-to-improve-web-performance-with-image-optimization/
-- https://www.npmjs.com/package/browser-image-compression
-- https://web.dev/articles/choose-the-right-image-format?hl=ko
+- <a href="https://oliveyoung.tech/blog/2021-11-22/how-to-improve-web-performance-with-image-optimization/">https://oliveyoung.tech/blog/2021-11-22/how-to-improve-web-performance-with-image-optimization/</a>
+- <a href="https://www.npmjs.com/package/browser-image-compression">https://www.npmjs.com/package/browser-image-compression</a>
+- <a href="https://web.dev/articles/choose-the-right-image-format?hl=ko">https://web.dev/articles/choose-the-right-image-format?hl=ko</a>
