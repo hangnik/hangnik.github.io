@@ -101,3 +101,8 @@ font-family: 'GmarketSans', serif;
 <img src="https://github.com/hangnik/hangnik.github.io/assets/97607752/9722c94b-7a10-4212-b4ba-3886d0ee28cc" width="800" />
 
 한 번 렌더링을 한 후 다시 측정해보니 size는 memory cache로, time은 0에 수렴하는 것을 확인할 수 있었다.
+
+## 🔗 참고
+
+- <a href="https://d2.naver.com/helloworld/4969726">https://d2.naver.com/helloworld/4969726</a>
+- <a href="https://yozm.wishket.com/magazine/detail/2107/">https://yozm.wishket.com/magazine/detail/2107/</a>
