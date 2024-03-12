@@ -194,7 +194,7 @@ const StyledButton = styled.button`
 `;
 ```
 
-### 3️⃣ 사용하기
+## 3️⃣ 사용하기
 
 ```jsx
 <Button type="button" size="lg" variant="white">
