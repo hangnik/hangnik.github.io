@@ -189,7 +189,8 @@ function Button({ disabled, size, variant, children, ...props }) {
 
 const StyledButton = styled.button`
   ${({ size }) => SIZES[size]}
-  ${({ variant }) => VARIANTS[variant]} /* 이하 생략 */
+  ${({ variant }) => VARIANTS[variant]} 
+  (이하 생략)
 `;
 ```
 
@@ -204,6 +205,89 @@ const StyledButton = styled.button`
 이렇게 사이즈, 상황 별로 변수를 지정해주니 props만 보고 어떤 버튼인지 한눈에 파악할 수 있고, 중복되는 코드 또한 줄일 수 있었다. 👍
 
 위의 분류 말고도 필요한 상황에 따라 변수를 추가하여 버튼 컴포넌트를 분류해주면 좋을 것 같다.
+
+### 전체 코드 (Button.jsx)
+
+```jsx
+import styled, { css } from "styled-components";
+
+function Button({ disabled, size, variant, children, ...props }) {
+  return (
+    <StyledButton disabled={disabled} size={size} variant={variant} {...props}>
+      {children}
+    </StyledButton>
+  );
+}
+
+const SIZES = {
+  sm: css`
+    --button-font-size: ${(props) => props.theme.fontSize.xsmall};
+    --button-padding: 0.2rem 0.3rem;
+    --button-height: 1.75rem;
+  `,
+  md: css`
+    --button-font-size: ${(props) => props.theme.fontSize.small};
+    --button-padding: 0.5rem 1.95rem;
+    --button-height: 2rem;
+  `,
+  lg: css`
+    --button-font-size: ${(props) => props.theme.fontSize.medium};
+    --button-padding: 0.7rem 2.15rem;
+    --button-height: 2.75rem;
+  `,
+};
+
+const VARIANTS = {
+  primary: css`
+    --button-color: ${(props) => props.theme.colors.whiteColor};
+    --button-background: ${(props) => props.theme.colors.mainColor};
+    --button-border: 1px solid ${(props) => props.theme.colors.mainColor};
+  `,
+  white: css`
+    --button-color: ${(props) => props.theme.colors.blackColor};
+    --button-background: ${(props) => props.theme.colors.whiteColor};
+    --button-border: 1px solid ${(props) => props.theme.colors.placeHolderColor};
+  `,
+  disabled: css`
+    --button-color: ${(props) => props.theme.colors.whiteColor};
+    --button-background: ${(props) => props.theme.colors.disabledColor};
+    --button-border: 1px solid ${(props) => props.theme.colors.disabledColor};
+  `,
+};
+
+const StyledButton = styled.button`
+  ${({ size }) => SIZES[size]}
+  ${({ variant }) => VARIANTS[variant]}
+
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  background: var(--button-background);
+  border: var(--button-border);
+  color: var(--button-color);
+  padding: var(--button-padding);
+  height: var(--button-height);
+  line-height: var(--button-height);
+  font-size: var(--button-font-size);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.75rem;
+  transition: all 0.3s ease-out;
+
+  &:disabled {
+    --button-background: ${(props) => props.theme.colors.disabledColor};
+    --button-color: ${(props) => props.theme.colors.whiteColor};
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    filter: brightness(0.9);
+  }
+`;
+
+export default Button;
+```
 
 ## 🔗 참고
 
